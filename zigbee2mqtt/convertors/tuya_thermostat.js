@@ -1173,9 +1173,9 @@ const definition = [
       .numeric('histeresis_temperature', ea.ALL)
       .withDescription('The delta between local_temperature and current_heating_setpoint to trigger activity')
       .withUnit('°C')
-      .withValueMin(0.5)
-      .withValueMax(10)
-      .withValueStep(0.5),
+      .withValueMin(0.1)
+      .withValueMax(1)
+      .withValueStep(0.1),
     e
       .numeric('max_heat_setpoint_limit', ea.ALL)
       .withDescription('Maximum Heating set point limit')
@@ -1195,7 +1195,7 @@ const definition = [
       .withValueStep(1),
     e.climate()
       .withLocalTemperature()
-      .withSetpoint('occupied_heating_setpoint', 5, 45, 0.5)
+      .withSetpoint('occupied_heating_setpoint', 5, 28, 0.1)
       .withLocalTemperatureCalibration(-9.9, 9.9, 0.1)
       .withSystemMode(['off', 'heat'])
       .withRunningState(['idle', 'heat'], ea.STATE)
@@ -1325,7 +1325,7 @@ const definition = [
   },
   fromZigbee: localFromZigbee,
   toZigbee: localToZigbee,
-  configure: configure_common,
+  configure: configure_common,a
   exposes: [
     e
       .binary('child_lock', ea.ALL, 'Lock', 'Unlock')
