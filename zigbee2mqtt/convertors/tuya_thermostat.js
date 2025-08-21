@@ -1325,7 +1325,7 @@ const definition = [
   },
   fromZigbee: localFromZigbee,
   toZigbee: localToZigbee,
-  configure: configure_common,a
+  configure: configure_common,
   exposes: [
     e
       .binary('child_lock', ea.ALL, 'Lock', 'Unlock')
